@@ -99,7 +99,7 @@ func (h *wavfileHeader) Bytes() []byte {
 	return buffer.Bytes()
 }
 
-// Create a file and return it for further writing of audio data.
+// New writes the given waveform to the given WriterAt.
 func New(w io.WriterAt, samplesPerSecond uint32, bitsPerSample uint8, channels uint16, waveform []byte) error {
 	header := newWavfileHeader(samplesPerSecond, bitsPerSample, channels)
 
